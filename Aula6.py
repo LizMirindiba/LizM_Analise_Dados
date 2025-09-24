@@ -4,7 +4,7 @@ import pandas as pd
 token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5NDA3MTEwLCJpYXQiOjE3NTY4MTUxMTAsImp0aSI6IjI0MmFlMWM0M2RjMzQ3ZmZhM2UzN2ExMTkzY2M3YWM1IiwidXNlcl9pZCI6Ijg3In0.epT-c3HenC3WagwmH0NTrOPzKSMrXFPatiqWGX0AAQo"
 headers = {'Authorization': 'JWT {}'.format(token)}
 params = {'data_base': '2025-09-01'}
-response = requests.get('https://laboratoriodefinancas.com/api/v1/planilhao',params=params, headers=headers)
+response = requests.get('https://laboratoriodefinancas.com/api/v1/balanco',params=params, headers=headers)
 response = response.json()
 dados = response["dados"]
 df = pd.DataFrame(dados)
@@ -45,7 +45,7 @@ for ticker in tickers:
     lista_resultado.append(resultados)
     print(ticker, roe)
 df_final = pd.DataFrame(lista_resultado)
-df_final.sort_values(["roe"])
+df_final.sort_values([roe])
 #Lucro Operacional 
 filtro(
     (df["conta"]=="3.05") &
@@ -85,3 +85,6 @@ lista_resultado.append(resultados)
 print(ticker,roe)
 df = pd.DataFrame(lista_resultado)
 df2 = pd.DataFrame(lista_resultado)
+
+df_final = pd.merge(df, df2, on="ticker")
+df_final.sort_values(["roe"])
