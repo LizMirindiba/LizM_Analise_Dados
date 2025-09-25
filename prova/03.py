@@ -1,8 +1,8 @@
 #revisão de dicionário
 dict = {
-    "nome": "Pedro",
-    "idade" : 20,
-    "email" : "pedro@pedro.com"
+    "nome": "Liz",
+    "idade" : 18,
+    "email" : "Lm@asdfg.com"
 }
 #para acessar a chave dentro do dicionário 
 dict['email']
@@ -17,7 +17,7 @@ df = pd.DataFrame([dict])
 #chamando API do site: https://viacep.com.br
 import requests
 
-cep = '70660011'
+cep = '57160000'
 url =  f"https://viacep.com.br/ws/{cep}/json/"
 response = requests.get(url)
 dict_cep = response.json()

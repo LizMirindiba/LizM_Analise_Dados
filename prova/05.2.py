@@ -1,7 +1,7 @@
 #Planilhao
 import requests
 import pandas as pd
-token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYxMjE3MDAwLCJpYXQiOjE3NTg2MjUwMDAsImp0aSI6ImE1MTcyNDFkMjVmMTQzNjE5NmUwZGQ4MjNmNzQwYzYzIiwidXNlcl9pZCI6IjQyIn0.hkjJt-zo7NI3Q_jn6USXVM5bKpdJ0P4ivwuQYzBIGQw"
+token = ""
 headers = {'Authorization': 'JWT {}'.format(token)}
 params = {'data_base': '2025-09-01'}
 response = requests.get('https://laboratoriodefinancas.com/api/v1/planilhao',params=params, headers=headers)

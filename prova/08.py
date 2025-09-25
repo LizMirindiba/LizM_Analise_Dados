@@ -1,5 +1,5 @@
 import pandas as pd
-df = pd.read_csv("C:\\pedro_ibmec\\quarto_semestre\\analise_dados\\exe_revisao\\myntra_dataset_ByScraping.csv")
+df = pd.read_csv("C:\\p\\\\analise_dados\\exe_revisao\\myntra_dataset_ByScraping.csv")
 
 #1. Mostrar as 5 primeiras e as 5 últimas linhas do DataFrame. 
 df.head(5)
